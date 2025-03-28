@@ -1,0 +1,17 @@
+vpc_cidr = "10.0.0.0/16"
+public_subnet_cidr_az1 = "10.0.1.0/24"
+public_subnet_cidr_az2 = "10.0.2.0/24"
+private_subnet_cidr_az1 = "10.0.3.0/24"
+private_subnet_cidr_az2 = "10.0.4.0/24"
+instance_type = "t2.micro"
+ami_id = "ami-071226ecf16aa7d96"
+key_name = "mar28"
+ssh_source_cidr = "0.0.0.0/0"
+db_allocated_storage = 20
+db_name = "mydb"
+db_engine = "postgres"
+db_engine_version = "15.3"
+db_instance_class = "db.t3.micro"
+db_username = "myuser"
+db_password = "Yk123456*"
+db_multi_az = false

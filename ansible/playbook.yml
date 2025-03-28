@@ -1,0 +1,29 @@
+---
+- hosts: web
+  become: true
+  tasks:
+    - name: Install web server (Apache)
+      yum:
+        name: httpd
+        state: latest
+
+    - name: Start web server
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: Install git
+      yum:
+        name: git
+        state: latest
+
+    - name: Clone web application
+      git:
+        repo: https://github.com/khdev-devops/grupparbete-mar6
+        dest: "{{ web_app_directory }}"
+
+    - name: Configure database connection
+      template:
+        src: roles/templates/db_config.php.j2
+        dest: "{{ web_app_directory }}/config.php"

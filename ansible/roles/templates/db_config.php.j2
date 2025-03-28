@@ -1,0 +1,14 @@
+<?php
+$host = '{{ hostvars["db_server"]["ansible_host"] }}'; 
+$dbname = '{{ db_name }}';
+$user = '{{ db_username }}';
+$password = '{{ db_password }}'; 
+
+try {
+    $conn = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // echo "Connected successfully";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?>
