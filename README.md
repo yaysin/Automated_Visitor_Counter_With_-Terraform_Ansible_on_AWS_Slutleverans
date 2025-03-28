@@ -25,5 +25,6 @@ Run the Ansible playbook: ansible-playbook playbook.yml
 
 Testing the Application:
 Try accessing the application by visiting the load balancer's DNS address in your web browser.
+
 The project diagram is as shown in the image. Auto Scaling was not used in the project. However, it is being considered for future implementation.
 ![image](https://github.com/user-attachments/assets/626ffbe0-b5b5-4fb9-af81-c9d6a38c2b03)
